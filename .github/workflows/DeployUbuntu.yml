@@ -40,6 +40,6 @@ jobs:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
         with:
           upload_url: '${{ steps.create_release.outputs.upload_url }}'
-          asset_path: './samplecalc-${{ github.run_number }}-Linux.elf'
-          asset_name: 'samplecalc-${{ github.run_number }}-Linux.elf'
+          asset_path: './SampleCalc'
+          asset_name: 'SampleCalc-${{ github.run_number }}-Linux.elf'
           asset_content_type: application/vnd.debian.binary-package
