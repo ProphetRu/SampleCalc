@@ -1,6 +1,6 @@
 name: Deploy Ubuntu
 
-'on':
+on:
   workflow_dispatch:
 
 jobs:
@@ -17,6 +17,7 @@ jobs:
       - name: Clone gtest library
         run: 'git clone https://github.com/google/googletest.git'
       - name: Build project
+        run: cmake .
         run: cmake --build . --config Release
       - name: Test project
         run: ctest
