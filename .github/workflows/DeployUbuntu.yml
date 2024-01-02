@@ -20,6 +20,7 @@ jobs:
         run: |
           cmake .
           cmake --build . --config Release
+          ls -la
       - name: Test project
         run: ctest
       - name: Create Release
