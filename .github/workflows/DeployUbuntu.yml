@@ -17,8 +17,9 @@ jobs:
       - name: Clone gtest library
         run: 'git clone https://github.com/google/googletest.git'
       - name: Build project
-        run: cmake .
-        run: cmake --build . --config Release
+        run: |
+          cmake .
+          cmake --build . --config Release
       - name: Test project
         run: ctest
       - name: Create Release
