@@ -21,5 +21,3 @@ cmake ..
 
 cmake --build . --config Release
 ```
-
-#cpp #class #static #template #cmake #gtest
