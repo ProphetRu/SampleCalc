@@ -9,13 +9,11 @@ jobs:
     permissions: write-all
     steps:
       - name: Install dependecies
-        run: sudo apt-get update && sudo apt-get install cmake -y
+        run: sudo apt-get update && sudo apt-get install cmake libgtest-dev -y
       - name: Get repository code
         uses: actions/checkout@v3
         with:
           submodules: true
-      - name: Clone gtest library
-        run: 'git clone https://github.com/google/googletest.git'
       - name: Build project
         run: |
           cmake .

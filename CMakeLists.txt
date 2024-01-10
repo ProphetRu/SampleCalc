@@ -37,11 +37,6 @@ set_target_properties(${PROJECT_NAME} ${TEST_NAME}
 #
 find_package(GTest)
 
-# build googletest
-add_subdirectory(
-	${CMAKE_CURRENT_SOURCE_DIR}/googletest
-)
-
 # add src to the include directories for the test target
 target_include_directories(${TEST_NAME} 
 	PRIVATE
@@ -53,11 +48,18 @@ target_include_directories(${TEST_NAME}
 target_link_libraries(${TEST_NAME} 
 	PRIVATE
 	${GTEST_BOOTH_LIBRARIES}
-	gmock
-	gmock_main
+	#gmock
+	#gmock_main
 	gtest 
 	gtest_main
 )
+
+if (MSVC)
+	# build googletest
+	add_subdirectory(
+		${CMAKE_CURRENT_SOURCE_DIR}/googletest
+	)
+endif()
 
 
 #--------------------------------------------------------------------------------------------------
